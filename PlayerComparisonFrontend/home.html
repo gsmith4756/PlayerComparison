@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NFL Player Comparison</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h2>NFL Player Comparison</h2>
+
+    <div id="search-container">
+        <input type="text" id="player1" class="search-input" placeholder="Enter Player 1">
+        <button onclick="searchPlayer('player1')" class="search-button">Search Player 1</button>
+    </div>
+
+    <div id="search-container">
+        <input type="text" id="player2" class="search-input" placeholder="Enter Player 2">
+        <button onclick="searchPlayer('player2')" class="search-button">Search Player 2</button>
+    </div>
+
+    <div id="player-one-info" class="player-info">
+        <!-- populated by searchPlayer function-->
+    </div>
+
+    <div id="player-two-info" class="player-info">
+        <!-- populated by searchPlayer function-->
+    </div>
+
+    <script>
+        function searchPlayer(playerId,playerName) {
+            var playerInputId = playerId.replace('player', '');
+            var playerName = document.getElementById('player' + playerInputId).value;
+
+            document.getElementById('player-info').innerHTML = "Player info " + playerName;
+        }
+    </script>
+
+</body>
+</html>
